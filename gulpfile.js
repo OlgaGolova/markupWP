@@ -13,6 +13,9 @@ const postcssPlagins = [
 		browsers: ['last 2 version']
 	})
 ];
+const cssmin = require('gulp-cssmin');
+const rename = require('gulp-rename');
+const minify = require('gulp-minify');
 // ES-2015 handler
 gulp.task('webpack', (cb) => {
 	plugins.webpack(webpackconfig(isDevelopment), (err, stats) => {
@@ -131,6 +134,9 @@ gulp.task('copyScripts', () => {
 		}
 	)
 	.pipe(plugins.cached('copyScripts'))
+	.pipe(minify({
+		ignoreFiles: ['*.min.js']
+	}))
 	.pipe(gulp.dest(settings.jsDir.output))
 	.pipe(plugins.count('## JS files was copied', {logFiles: true}));
 });
@@ -161,6 +167,8 @@ const beautifyMainCss = () => {
 			}
 		)
 		.pipe(plugins.csscomb())
+		.pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(cssUrl))
 		.pipe(plugins.count('beautified css files', {logFiles: true}));
 };

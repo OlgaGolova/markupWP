@@ -64,9 +64,7 @@
 }
 
 [class^="col"] {
-  flex-grow: 1;
-  flex-basis: 0;
-  flex: 0 0 100%;
+  flex: 1 0 100%;
   max-width: 100%;
   padding: 0 0 10px;
 
