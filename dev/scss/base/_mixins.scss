@@ -300,13 +300,29 @@ $animation-speed: 0.3s !default;
   }
 }
 
+@mixin add-params() {
+  @each $val, $media in $grid {
+    &.df-rr-#{$val} {
+      @include media('≥' + $media) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &.df-aic-#{$val} {
+      @include media('≥' + $media) {
+        align-items: center;
+      }
+    }
+  }
+}
+
 // flex grid  
 @mixin flex-grid() {
   @each $val, $media in $grid {
     @for $gutter from 1 through 12 {
       .col-#{$val}-#{$gutter} {
         @include media('≥' + $media) {
-          flex: 0 0 calc(100% / 12 * #{$gutter});
+          flex: 1 0 calc(100% / 12 * #{$gutter});
           max-width: calc(100% / 12 * #{$gutter});
         }
       }
