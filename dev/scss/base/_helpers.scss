@@ -63,30 +63,6 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 -($gutter);
-
-  /* &.df-rr-sm {
-    @include media('≥tablet') {
-      flex-direction: row-reverse;
-    }
-  }
-  
-  &.df-rr-md {
-    @include media('≥desktop') {
-      flex-direction: row-reverse;
-    }
-  }
-  
-  &.df-jcc-sm {
-    @include media('≥tablet') {
-      justify-content: center;
-    }
-  }
-  
-  &.df-jcc-md {
-    @include media('≥desktop') {
-      justify-content: center;
-    }
-  } */
 }
 
 [class^="col"] {
