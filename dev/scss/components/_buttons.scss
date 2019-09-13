@@ -1,6 +1,8 @@
 .btn {
   @include animate(background color);
   
+  display: inline-block;
+  vertical-align: top;
   border: $btn-border;
   padding: $btn-padding;
   font-size: $btn-font-size;
