@@ -5,6 +5,8 @@
   padding: $btn-padding;
   font-size: $btn-font-size;
   line-height: $btn-line-height;
+  display: inline-block;
+  vertical-align: top;
 
   &.btn-default {
     @include button-color($btn-background, $btn-color, $btn-border-color, $btn-hover-background, $btn-hover-color);
