@@ -62,7 +62,10 @@
 
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -($gutter);
+  
+  @include media('≥tablet') {
+    margin: 0 (-$gutter);
+  }
 }
 
 [class^="col"] {
