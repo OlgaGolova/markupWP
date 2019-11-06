@@ -45,6 +45,20 @@
   }
 }
 
+%bgCover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+%absoluteCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 /// * Helper class to truncate and add ellipsis to a string too long for it to fit
 /// * on a single line.
 /// * 1. Prevent content from wrapping, forcing it on a single line.
