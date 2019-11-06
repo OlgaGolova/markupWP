@@ -167,10 +167,10 @@ const beautifyMainCss = () => {
 			}
 		)
 		.pipe(plugins.csscomb())
-		.pipe(cssmin())
-        .pipe(rename({suffix: '.min'}))
+		.pipe(plugins.count('beautified css files', {logFiles: true}))
 		.pipe(gulp.dest(cssUrl))
-		.pipe(plugins.count('beautified css files', {logFiles: true}));
+		.pipe(cssmin())
+        	.pipe(rename({suffix: '.min'}));
 };
 
 const beautifyOtherCss = () => {
