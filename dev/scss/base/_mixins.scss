@@ -318,6 +318,9 @@ $animation-speed: 0.3s !default;
     @for $gutter from 1 through 12 {
       .col-#{$val}-#{$gutter} {
         @include media('≥' + $media) {
+          flex-basis: 0;
+          -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
           flex: 1 0 calc(100% / 12 * #{$gutter});
           max-width: calc(100% / 12 * #{$gutter});
         }
